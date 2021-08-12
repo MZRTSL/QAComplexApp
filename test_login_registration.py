@@ -142,7 +142,7 @@ class TestLoginPage (BaseTest):
         """
         - Open start page
         - Fill login and password
-        - Click Sign In
+        - Click Sign In button
         """
         # Open start page
         driver.get ("https://qa-complex-app-for-testing.herokuapp.com")
