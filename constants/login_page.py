@@ -5,11 +5,13 @@ class LoginPageConstants:
     SIGN_IN_USERNAME_XPATH=".//input[@placeholder='Username']"
     SIGN_IN_PASSWORD_XPATH=".//input[@placeholder='Password']"
     SIGN_IN_BUTTON_XPATH=".//button[contains(text(), 'Sign In')]"
+    SIGN_IN_BUTTON_TEXT="Sign In"
 
     SIGN_UP_USERNAME_XPATH='.//*[@id="username-register"]'
     SIGN_UP_EMAIL_XPATH='.//*[@id="email-register"]'
     SIGN_UP_PASSWORD_XPATH='.//*[@id="password-register"]'
     SIGN_UP_BUTTON_XPATH='.//*[@id="registration-form"]/button'
+    SIGN_UP_BUTTON_TEXT="Sign Up for OurApp"
 
     # Messages
     HELLO_MESSAGE_XPATH='/html/body/div[2]/div[1]'
@@ -18,6 +20,9 @@ class LoginPageConstants:
     ERROR_MESSAGE_EMPTY_USERNAME_FIELDS_XPATH='.//*[@id="registration-form"]/div[1]/div'
     ERROR_MESSAGE_EMAIL_FIELDS_XPATH='.//*[@id="registration-form"]/div[2]/div'
     ERROR_MESSAGE_PASSWORD_EMPTY_FIELDS_XPATH='.//*[@id="registration-form"]/div[3]/div'
+
+    NOTIFICATION_XPATH='./html/body/div[2]/div[2]/div[1]/p'
+    REMEMBER_WRITING_XPATH='./html/body/div[2]/div/div[1]/h1'
 
     # Texts
     HELLO_MESSAGE_TEXT="Invalid username / password"
