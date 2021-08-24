@@ -24,9 +24,11 @@ class TestLoginPage1 (BaseTest):
 
     @pytest.fixture (scope="function")
     def register(self, driver):
-        base_helper=BaseHelpers (driver)
-        registered_user=self.register_user
-        base_helper.find_by_contains_text (ProfilePage.SIGN_OUT_BUTTON_TEXT, "button").click ()
+        login_helper=LoginHelpers (driver)
+        registered_user=login_helper.register_user (username=f"user{self.variety}",
+                                                    email=f"mail{self.variety}@gmail.com",
+                                                    password=f"Paw{self.variety}")
+        login_helper.find_by_contains_text (ProfilePage.SIGN_OUT_BUTTON_TEXT, "button").click ()
         sleep (1)
         return registered_user
 
