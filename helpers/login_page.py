@@ -1,5 +1,5 @@
 import logging
-from asyncio import sleep
+from time import sleep
 
 from selenium.webdriver.common.by import By
 
@@ -17,23 +17,21 @@ class LoginHelpers (BaseHelpers):
 
     def login(self, username, password):
         """Login using provided credentials"""
-
-        self.fill_input_fields (by=By.XPATH, locator=LoginPageConstants.SIGN_IN_USERNAME_XPATH, value=username)
-        self.fill_input_fields (by=By.XPATH, locator=LoginPageConstants.SIGN_IN_PASSWORD_XPATH, value=password)
-        sleep (1)
+        # Clear required fields and fill
+        self.fill_input_field (by=By.XPATH, locator=LoginPageConstants.SIGN_IN_USERNAME_XPATH, value=username)
+        self.fill_input_field (by=By.XPATH, locator=LoginPageConstants.SIGN_IN_PASSWORD_XPATH, value=password)
         self.log.debug ("Fields are filled with invalid values")
 
         # Click on Sign In button
-        sign_up_button=self.find_by_contains_text (text=LoginPageConstants.SIGN_UP_BUTTON_TEXT, element_tag="button")
-        sign_up_button.click ()
-        self.log.info ("Clicked on 'Sign In' button")
+        self.find_by_contains_text (text=LoginPageConstants.SIGN_IN_BUTTON_TEXT, element_tag="button").click ()
+        self.log.info ("Clicked on 'Sign In'")
 
-    def test_registered_user(self, username, email, password):
+    def register_user(self, username, email, password):
         """
         - Open start page;
-        - Clear username, email, password fields for Sing In form;
+        - Clear username, email, password fields for Sing UP form;
         - Add information in registration from
-        - Click on Sign In button;
+        - Click on Sign up button;
         - Verify user registration successful
         """
         # Open start page
@@ -41,12 +39,19 @@ class LoginHelpers (BaseHelpers):
         self.log.info ("Open Page")
 
         # fill fields in Registration form
-        self.fill_input_fields (by=By.XPATH, locator=LoginPageConstants.SIGN_UP_USERNAME_XPATH, value=username)
-        self.fill_input_fields (by=By.XPATH, locator=LoginPageConstants.SIGN_UP_EMAIL_XPATH, value=email)
-        self.fill_input_fields (by=By.XPATH, locator=LoginPageConstants.SIGN_UP_PASSWORD_XPATH, value=password)
+        self.fill_input_field (by=By.XPATH, locator=LoginPageConstants.SIGN_UP_USERNAME_XPATH, value=username)
+        self.fill_input_field (by=By.XPATH, locator=LoginPageConstants.SIGN_UP_EMAIL_XPATH, value=email)
+        self.fill_input_field (by=By.XPATH, locator=LoginPageConstants.SIGN_UP_PASSWORD_XPATH, value=password)
+        self.log.debug ("Fields were filled")
         sleep (1)
 
         # Click on Sign Up for OurApp button
         self.driver.find_element_by_xpath (LoginPageConstants.SIGN_UP_BUTTON_XPATH).click ()
+        sleep (1)
 
         return username, email, password
+
+    def verify_error_message(self, text):
+        """Find error text and verify it"""
+        error_message=self.find_by_contains_text (text)
+        assert error_message.text == text

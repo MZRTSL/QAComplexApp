@@ -4,14 +4,14 @@ class LoginPageConstants:
     # Sign in
     SIGN_IN_USERNAME_XPATH=".//input[@placeholder='Username']"
     SIGN_IN_PASSWORD_XPATH=".//input[@placeholder='Password']"
-    SIGN_IN_BUTTON_XPATH=".//button[contains(text(), 'Sign In')]"
-    SIGN_IN_BUTTON_TEXT="Sign In"
+    SIGN_IN_BUTTON_TEXT='Sign In'
+    SIGN_IN_BUTTON_XPATH=f".//button[contains(text(), 'Sign In')]"
 
     SIGN_UP_USERNAME_XPATH='.//*[@id="username-register"]'
     SIGN_UP_EMAIL_XPATH='.//*[@id="email-register"]'
     SIGN_UP_PASSWORD_XPATH='.//*[@id="password-register"]'
     SIGN_UP_BUTTON_XPATH='.//*[@id="registration-form"]/button'
-    SIGN_UP_BUTTON_TEXT="Sign Up for OurApp"
+    SIGN_UP_BUTTON_TEXT='Sign up'
 
     # Messages
     HELLO_MESSAGE_XPATH='/html/body/div[2]/div[1]'
@@ -26,7 +26,7 @@ class LoginPageConstants:
 
     # Texts
     HELLO_MESSAGE_TEXT="Invalid username / password"
-    SIGN_IN_EMPTY_FIELDS_LOGIN_TEXT='Invalid username / password'
+    SIGN_IN_EMPTY_FIELDS_LOGIN_TEXT="Invalid username / password"
     ERROR_MESSAGE_CYRILLIC_USER_NAME_TEXT='Username can only contain letters and numbers.'
     ERROR_MESSAGE_EMPTY_USERNAME_FIELDS_TEXT='Username must be at least 3 characters.'
     ERROR_MESSAGE_EMAIL_FIELDS_TEXT='You must provide a valid email address.'
@@ -34,3 +34,6 @@ class LoginPageConstants:
     ERROR_MESSAGE_PASSWORD_EMPTY_FIELDS_TEXT='Password must be at least 12 characters.'
     ERROR_MESSAGE_USER_ALREADY_TAKEN_TEXT='That username is already taken.'
     ERROR_MESSAGE_PASSWORD_CANNOT_EXCEED_TEXT='Password cannot exceed 50 characters'
+
+    # Sign Out
+    SIGN_OUT_BUTTON_XPATH="/html/body/header/div/div/form/button"
