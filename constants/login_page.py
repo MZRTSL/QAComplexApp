@@ -5,7 +5,7 @@ class LoginPageConstants:
     SIGN_IN_USERNAME_XPATH=".//input[@placeholder='Username']"
     SIGN_IN_PASSWORD_XPATH=".//input[@placeholder='Password']"
     SIGN_IN_BUTTON_TEXT='Sign In'
-    SIGN_IN_BUTTON_XPATH=f".//button[contains(text(), 'Sign In')]"
+    SIGN_IN_BUTTON_XPATH="/html/body/header/div/form/div/div[3]/button"
 
     SIGN_UP_USERNAME_XPATH='.//*[@id="username-register"]'
     SIGN_UP_EMAIL_XPATH='.//*[@id="email-register"]'
@@ -37,3 +37,6 @@ class LoginPageConstants:
 
     # Sign Out
     SIGN_OUT_BUTTON_XPATH="/html/body/header/div/div/form/button"
+
+    # Find text
+    HEADER_XPATH="/html/body/header/div/h4/a"

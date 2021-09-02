@@ -6,3 +6,7 @@ class ProfilePage:
     HELLO_MESSAGE_USERNAME_XPATH=".//strong"
 
     SIGN_OUT_BUTTON_TEXT="Sign Out"
+    SIGN_OUT_BUTTON_XPATH=f".//button[contains(text(), '{SIGN_OUT_BUTTON_TEXT}')]"
+
+    TEXT_REMEMBER_CLASS="display-3"
+    TEXT_REMEMBER_TEXT="Remember Writing?"
