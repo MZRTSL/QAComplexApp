@@ -94,7 +94,7 @@ class TestLoginPage1 (BaseTest):
         self.log.info ("Open Page")
 
         # Clear required fields
-        login_helper.register_user (username="", email="", password="")
+        login_helper.fill_registration_form (username="", email="", password="")
         self.log.info ("Clear required fields and clicked on 'Sign In' button")
 
         # Verify error message
@@ -118,7 +118,7 @@ class TestLoginPage1 (BaseTest):
         self.log.info ("Open Page")
 
         # Clear required fields and Add valid value in username field
-        login_helper.register_user (username="test", email="", password="")
+        login_helper.fill_registration_form (username="test", email="", password="")
         self.log.info ("Username field are filled with valid value and clear other")
 
         # Verify error message
@@ -141,7 +141,7 @@ class TestLoginPage1 (BaseTest):
         self.log.info ("Open Page")
 
         # Clear required fields
-        login_helper.register_user (username="", email="test@test.com", password="")
+        login_helper.fill_registration_form (username="", email="test@test.com", password="")
         self.log.info ("Field valid email only and click button")
 
         # Verify error message
@@ -165,7 +165,7 @@ class TestLoginPage1 (BaseTest):
 
         # Clear required fields
 
-        login_helper.register_user (username="", email="", password="test1234test1234test1234test1234test1234")
+        login_helper.fill_registration_form (username="", email="", password="test1234test1234test1234test1234test1234")
         self.log.info ("Field invalid password only and click button")
 
         # Verify error message
@@ -188,7 +188,7 @@ class TestLoginPage1 (BaseTest):
 
         # Clear required fields
 
-        login_helper.register_user (username="Александр", email="тест@тест.юа", password="тест123тест123тест")
+        login_helper.fill_registration_form (username="Александр", email="тест@тест.юа", password="тест123тест123тест")
         self.log.info ("Field are filled with cyrillic text and click button")
 
         # Verify error message
